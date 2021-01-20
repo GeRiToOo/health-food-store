@@ -1,0 +1,1033 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ======== DON'T CHANGE ANYTHING ABOVE THIS LINE ======== */
+
+/* MY STYLES START HERE */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;
+    font-size: 1.0em;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #000;
+
+}
+
+header,
+main,
+footer {
+    max-width: 1100px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+
+/* Headings */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 3.6em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+/* Cursive font utilities */
+.cursive {
+    font-family: 'Herr Von Muellerhoff', "Brush Script MT", cursive;
+    font-size: 6.4em;
+    font-weight: 100;
+    line-height: .2;
+    color: #c59d5f;
+    text-align: center;
+    width: 100%;
+}
+
+.cursive::first-letter {
+    font-size: 1.4em;
+}
+
+/* Links & icons */
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+i {
+    margin: 0 0.6em;
+}
+
+/* Images */
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* * * * * * * * * * * * * * * * *
+* * * - - - UTILITIES - - - * * * * 
+* * * * * * * * * * * * * * * * * */
+
+/* Flex-box */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Headline styling */
+.headline {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background: rgba(66, 63, 63, 0.349);
+
+}
+
+.headline.flex {
+    flex-direction: column;
+}
+
+.headline p:first-of-type {
+    font-size: 4em;
+    color: #FFF;
+    color: #c59d5f;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    letter-spacing: 13px;
+}
+
+.headline h1 {
+    font-size: 6em;
+    color: #FFF;
+    font-weight: 900;
+    line-height: 0.9;
+}
+
+.headline p:last-of-type {
+    margin-top: 0.6em;
+    font-size: 2em;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: .2;
+    position: relative;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+
+/* ------------------------------------------------------------
+* * * * * * PAGES BASE STYLINGS STYLINGS * * * * * * * * * * * *
+---------------------------------------------------------------*/
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Navigation Menu Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+header nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    padding: 0 3em;
+    z-index: 100;
+}
+
+header nav.flex {
+    justify-content: space-between;
+}
+
+header nav ul {
+    display: flex;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-left: 1.5em;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+header nav ul li a:after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    transition: width 0.7s ease;
+}
+
+
+header nav ul li a:hover:after {
+    width: 80%;
+}
+
+header nav ul li .current:after {
+    width: 80%;
+    color: #d1aa6e;
+}
+
+header nav ul li a:focus {
+    outline: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Main Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+main {
+    position: relative;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Footer Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+footer {
+    position: relative;
+    padding-top: 1em;
+    min-height: 200px;
+    background: url(../images/footer.jpg) center no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    color: #fff;
+}
+
+.footer-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Categories */
+.nav-footer ul {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-footer h2 {
+    font-size: 1em;
+}
+
+.nav-footer ul li:first-of-type {
+    margin-top: 0.2em;
+}
+
+.nav-footer ul li a {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+
+/* - - - Address - - - -  */
+/* .footer-container address {
+    color: #fff;
+}
+
+.footer-container address h2 {
+    color: #fff;
+    font-size: 1em;
+}
+
+address ul li i {
+    font-size: 0.8em;
+}
+
+.footer-container address span {
+    font-size: 0.8em;
+}
+
+.footer-container address li:first-of-type span {
+    display: block;
+    margin-left: 1.2em;
+}
+
+.footer-container address li:first-of-type span:first-of-type {
+    display: inline-block;
+    margin: 0;
+}
+
+.footer-container address li a {
+    color: #fff;
+} */
+
+/* Social Media */
+
+/* .social-media-footer {
+    min-width: 130px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.social-media-footer h2 {
+    font-size: 1em;
+    color: #fff;
+}
+
+.social-media-footer>ul {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.social-media-footer>ul li {
+    margin-right: 0.5em;
+    color: #fff;
+}
+
+.social-media-footer>ul li a {
+    margin-top: 0.3em;
+    font-size: 1.5em;
+    color: #fff;
+} */
+
+/* Terms */
+/* .terms {
+    width: 80%;
+    min-height: 40px;
+    margin-top: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #fff;
+}
+
+.terms p {
+    font-size: 0.8em;
+}
+
+.terms>ul {
+    min-width: 310px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.terms>ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8em;
+} */
+
+
+/* ------------------------------------------------------------
+* * * * * * * * * HOMEPAGE STYLINGS * * * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+
+/* - * - * - * HEADER-homepage * - * - * - */
+
+.header-homepage {
+    position: relative;
+    height: 100vh;
+    background: url('../images/shutterstock_1155170620mirror.jpg') center no-repeat;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* * * Social Media - Homepage-header * * */
+.social-media-homepage {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0%, -50%);
+    height: 50%;
+    width: 100px;
+}
+
+.social-media-homepage ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.social-media-homepage ul li a i {
+    font-size: 2em;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.social-media-homepage ul li a i:hover {
+    transform: scale(1.2, 1.2);
+}
+
+/* * * Section - Products * * */
+section {
+    margin: 3em 0;
+    min-height: 60vh;
+    flex-wrap: wrap;
+}
+
+.description {
+    width: 450px;
+    margin: 2em;
+    flex-direction: column;
+}
+
+.description>h2 {
+    line-height: .6;
+    text-align: center;
+}
+
+.description p {
+    font-size: 1.2em;
+}
+
+.description p+p {
+    margin-top: 1em;
+}
+
+.description p:first-of-type {
+    color: #333230;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center;
+}
+
+/* .description>h2 {
+    font-size: 2em;
+} */
+
+.description ul {
+    width: 100%;
+    height: 200px;
+    margin-top: 2em;
+}
+
+.description ul>li {
+    margin: 0.8em 2em;
+    font-size: 1.3em;
+}
+
+section img {
+    width: 500px;
+    margin: 2em;
+}
+
+/* * * Parallax-homepage * * */
+
+
+.parallax {
+    height: 60vh;
+    background: url('../images/shutterstock_1373773163darker.jpg') center no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.parallax .heading {
+    width: 450px;
+    height: 90%;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.938);
+}
+
+
+.parallax .heading h1 {
+    line-height: .5;
+}
+
+.parallax .heading p {
+    color: #000;
+    font-size: 1.7em;
+    font-weight: 900;
+}
+
+.parallax .heading a {
+    margin-top: 2em;
+    background: #d6b88a;
+    border-radius: 0.8em;
+    padding: 0.5em 1em;
+    color: #fff;
+    font-size: 1.2em;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.parallax .heading a:hover {
+    background: rgba(211, 140, 34, 0.494);
+}
+
+/* ------------------------------------------------------------
+* * * * * * * * * CONTACT-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+/* - * - * - * HEADER-contactpage * - * - * - */
+.nav-contact {
+    position: relative;
+    background: url(../images/footer.jpg) center no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 5em;
+}
+
+/* - * - * - * Section contact-form contactpage * - * - * - */
+.contact-form {
+    width: 100%;
+    justify-content: center;
+}
+
+h2 {
+    align-self: flex-start;
+    font-weight: 400;
+}
+
+.contact-form>.description {
+    margin: 2em;
+}
+
+.contact-form form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+
+}
+
+input {
+    margin-top: 0.9em;
+}
+
+input,
+textarea {
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+
+}
+
+input[type=text],
+input[type=email] {
+    height: 40px;
+    padding: 0.5em;
+    background-color: #fafafa;
+    border: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: .3s box-shadow;
+}
+
+input[type=text]:hover,
+input[type=email]:hover,
+textarea:hover,
+input[type=submit]:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+input[type=submit] {
+    height: 40px;
+    padding: 5px 15px;
+    background: rgb(0, 0, 0);
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #fff;
+}
+
+textarea {
+    margin-top: 0.9em;
+    padding: 0.5em;
+    border: 0;
+    background-color: #fafafa;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: .3s box-shadow;
+    resize: none;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+}
+
+
+/* ------------------------------------------------------------
+* * * * * * * * * ABOUT-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+.parallax-fermer {
+    height: 60vh;
+    background: url('../images/aboutparallax.jpg') center no-repeat;
+    background-attachment: fixed;
+    background-position: bottom left;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax-shop {
+    height: 60vh;
+    background: url('../images/shutterstock_772785955.jpg') center no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------------------------
+* * * * * * * * * RECIPES-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+.recipe {
+    display: grid;
+    grid-template-columns: repeat(7, 160px);
+    grid-template-rows: 80px 380px min-content;
+    margin-top: 1.5em;
+    padding-bottom: 3em;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.562);
+    border-radius: 5px;
+}
+
+.recipe h2 {
+    grid-column: 2 / 6;
+    grid-row: 1 / 2;
+    align-self: end;
+}
+
+.recipe ul:first-of-type {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    align-self: center;
+}
+
+.recipe ul:first-of-type li span {
+    font-weight: 600;
+    display: inline-block;
+    width: 60px;
+}
+
+.recipe ul:first-of-type li p {
+    display: inline-block;
+}
+
+.recipe ul:first-of-type li {
+    margin-top: 0.4em;
+}
+
+.recipe ul:first-of-type li:nth-child(1) span,
+.recipe div>span {
+    font-weight: 600;
+    background: black;
+    color: white;
+    padding: 0.5em;
+    width: 100px;
+}
+
+
+.recipe ul:first-of-type>li:nth-child(1) {
+    margin-bottom: 1em;
+}
+
+.recipe img {
+    width: 300px;
+    height: 300px;
+    grid-column: 4 / 7;
+    grid-row: 2 / 4;
+    align-self: center;
+    justify-self: center;
+}
+
+.recipe ul {
+    grid-column: 4 / 7;
+    grid-row: 4 / 5;
+    align-self: center;
+}
+
+.recipe div {
+    grid-column: 2 / 7;
+    grid-row: 6 / 7;
+}
+
+.recipe div p:first-of-type {
+    margin-top: 1em;
+}
+
+.recipe div p+p {
+    margin-top: 0.5em;
+}
+
+
+.subscribe {
+    flex-direction: column;
+}
+
+.subscribe>h2 {
+    text-align: center;
+    font-weight: 600;
+    font-size: 3em;
+    width: 100%;
+}
+
+.subscribe h2+p {
+    width: 80%;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.subscribe form {
+    width: 70%;
+}
+
+.subscribe form>p {
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+
+}
+
+.subscribe div:nth-of-type(1) input {
+    margin: 0;
+    margin-left: 1.3em;
+}
+
+.subscribe div:nth-of-type(1) label {
+    margin-left: 0.2em;
+}
+
+.subscribe form div:nth-of-type(2) button {
+    background-color: #000;
+    border: none;
+    height: 50px;
+    width: 30%;
+    color: #fff;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+.subscribe form>div:nth-of-type(2) {
+    width: 100%;
+    margin-top: 2em;
+    justify-content: space-between;
+}
+
+.subscribe form div:nth-of-type(2)>input {
+    width: 70%;
+    height: 50px;
+    margin: 0;
+    padding: 1em;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.working-information {
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 180px;
+    background-color: #caa875;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 3px;
+}
+
+.address,
+.contact,
+.working {
+    color: #333230;
+    height: 110px;
+    width: 200px;
+    /* background-color: green; */
+}
+
+.address h3,
+.contact h3,
+.working h3 {
+    font-size: 1.3em;
+}
+
+
+.address h3+p,
+.contact h3+p,
+.working h3+p {
+    margin-top: 0.5em;
+}
+
+
+.address p>span {
+    display: block;
+    margin-left: 2em;
+}
+
+.contact>p,
+.working>p {
+    margin-left: 2em;
+}
+
+.contact p>a {
+    color: #333230;
+}
+
+.working>p {
+    text-align: center;
+}
+
+.contact {
+    position: relative;
+}
+
+.contact:before,
+.contact:after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 110px;
+    background-color: #333230be;
+}
+
+.contact:before {
+    left: -20px;
+    top: 0;
+}
+
+.contact:after {
+    right: -20px;
+    top: 0;
+}
+
+footer>nav {
+    width: 250px;
+    height: 50px;
+    justify-self: flex-end;
+}
+
+footer>nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer>nav ul li a {
+    color: #fff;
+}
+
+
+.social-media {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.1em 0.5em;
+    width: 130px;
+    height: 50px;
+
+}
+
+.social-media a {
+    font-size: 1.6em;
+    color: #fff;
+}
+
+.badge {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(20deg);
+}
+
+.badge img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.logo-footer {
+    position: absolute;
+    left: 30px;
+    bottom: 40px;
+}
+
+.copy-right {
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+}
