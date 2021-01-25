@@ -140,6 +140,16 @@ table {
 
 /* MY STYLES START HERE */
 
+:root {
+    --light-base-color: #fff;
+    --gold-base-color: #c59d5f;
+    --dark-base-color: #333230;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -149,8 +159,7 @@ body {
     font-size: 1.0em;
     font-weight: 400;
     line-height: 1.6;
-    color: #000;
-
+    color: var(--dark-base-color);
 }
 
 header,
@@ -160,7 +169,6 @@ footer {
     min-width: 320px;
     margin: 0 auto;
 }
-
 
 /* Headings */
 h1,
@@ -184,9 +192,9 @@ h2 {
     font-size: 6.4em;
     font-weight: 100;
     line-height: .2;
-    color: #c59d5f;
     text-align: center;
     width: 100%;
+    color: var(--gold-base-color);
 }
 
 .cursive::first-letter {
@@ -196,11 +204,15 @@ h2 {
 /* Links & icons */
 a {
     text-decoration: none;
-    color: #000;
+    color: var(--dark-base-color);
 }
 
 i {
     margin: 0 0.6em;
+}
+
+strong {
+    font-weight: 600;
 }
 
 /* Images */
@@ -209,6 +221,14 @@ img {
     display: block;
     width: 100%;
     height: 100%;
+}
+
+/* Remove Focus Outline */
+
+input:focus,
+a:focus,
+button:focus {
+    outline: 0;
 }
 
 /* * * * * * * * * * * * * * * * *
@@ -228,7 +248,6 @@ img {
     height: 50%;
     position: relative;
     background: rgba(66, 63, 63, 0.349);
-
 }
 
 .headline.flex {
@@ -237,288 +256,35 @@ img {
 
 .headline p:first-of-type {
     font-size: 4em;
-    color: #FFF;
-    color: #c59d5f;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
     letter-spacing: 13px;
+    color: var(--gold-base-color);
 }
 
 .headline h1 {
     font-size: 6em;
-    color: #FFF;
     font-weight: 900;
     line-height: 0.9;
+    color: var(--light-base-color);
 }
 
 .headline p:last-of-type {
+    position: relative;
     margin-top: 0.6em;
     font-size: 2em;
-    font-weight: 400;
-    color: #ffffff;
     line-height: .2;
-    position: relative;
     letter-spacing: 2px;
     font-style: italic;
+    color: var(--light-base-color);
+
 }
 
-/* ------------------------------------------------------------
-* * * * * * PAGES BASE STYLINGS STYLINGS * * * * * * * * * * * *
----------------------------------------------------------------*/
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-* * * - - - -  Navigation Menu Base Styling - - - -  * * * * * *
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-header nav {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100px;
-    padding: 0 3em;
-    z-index: 100;
-}
-
-header nav.flex {
-    justify-content: space-between;
-}
-
-header nav ul {
-    display: flex;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    display: inline-block;
-    padding: 0.5em 1em;
-    margin-left: 1.5em;
-    position: relative;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: all 0.6s ease;
-}
-
-header nav ul li a:after {
-    content: '';
-    position: absolute;
-    background-color: #fff;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 2px;
-    width: 0;
-    transition: width 0.7s ease;
-}
-
-
-header nav ul li a:hover:after {
-    width: 80%;
-}
-
-header nav ul li .current:after {
-    width: 80%;
-    color: #d1aa6e;
-}
-
-header nav ul li a:focus {
-    outline: 0;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-* * * - - - -  Main Base Styling - - - -  * * * * * *
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-main {
-    position: relative;
-}
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-* * * - - - -  Footer Base Styling - - - -  * * * * * *
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
-footer {
-    position: relative;
-    padding-top: 1em;
-    min-height: 200px;
-    background: url(../images/footer.jpg) center no-repeat;
-    background-position: center;
-    background-size: cover;
-    flex-direction: column;
-    color: #fff;
-}
-
-.footer-container {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Categories */
-.nav-footer ul {
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.nav-footer h2 {
-    font-size: 1em;
-}
-
-.nav-footer ul li:first-of-type {
-    margin-top: 0.2em;
-}
-
-.nav-footer ul li a {
-    color: #fff;
-    font-size: 0.8em;
-}
-
-
-/* - - - Address - - - -  */
-/* .footer-container address {
-    color: #fff;
-}
-
-.footer-container address h2 {
-    color: #fff;
-    font-size: 1em;
-}
-
-address ul li i {
-    font-size: 0.8em;
-}
-
-.footer-container address span {
-    font-size: 0.8em;
-}
-
-.footer-container address li:first-of-type span {
-    display: block;
-    margin-left: 1.2em;
-}
-
-.footer-container address li:first-of-type span:first-of-type {
-    display: inline-block;
-    margin: 0;
-}
-
-.footer-container address li a {
-    color: #fff;
-} */
-
-/* Social Media */
-
-/* .social-media-footer {
-    min-width: 130px;
-    min-height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.social-media-footer h2 {
-    font-size: 1em;
-    color: #fff;
-}
-
-.social-media-footer>ul {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.social-media-footer>ul li {
-    margin-right: 0.5em;
-    color: #fff;
-}
-
-.social-media-footer>ul li a {
-    margin-top: 0.3em;
-    font-size: 1.5em;
-    color: #fff;
-} */
-
-/* Terms */
-/* .terms {
-    width: 80%;
-    min-height: 40px;
-    margin-top: 0.5em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #fff;
-}
-
-.terms p {
-    font-size: 0.8em;
-}
-
-.terms>ul {
-    min-width: 310px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.terms>ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 0.8em;
-} */
-
-
-/* ------------------------------------------------------------
-* * * * * * * * * HOMEPAGE STYLINGS * * * * * * * * * * * * * * 
----------------------------------------------------------------*/
-
-
-/* - * - * - * HEADER-homepage * - * - * - */
-
-.header-homepage {
-    position: relative;
-    height: 100vh;
-    background: url('../images/shutterstock_1155170620mirror.jpg') center no-repeat;
-    flex-direction: column;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-}
-
-/* * * Social Media - Homepage-header * * */
-.social-media-homepage {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0%, -50%);
-    height: 50%;
-    width: 100px;
-}
-
-.social-media-homepage ul {
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 100%;
-}
-
-.social-media-homepage ul li a i {
-    font-size: 2em;
-    color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.social-media-homepage ul li a i:hover {
-    transform: scale(1.2, 1.2);
-}
-
-/* * * Section - Products * * */
+/* * * Section and Description * * */
 section {
     margin: 3em 0;
     min-height: 60vh;
+}
+
+section.flex {
     flex-wrap: wrap;
 }
 
@@ -542,15 +308,11 @@ section {
 }
 
 .description p:first-of-type {
-    color: #333230;
+    color: var(--dark-base-color);
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
 }
-
-/* .description>h2 {
-    font-size: 2em;
-} */
 
 .description ul {
     width: 100%;
@@ -558,7 +320,7 @@ section {
     margin-top: 2em;
 }
 
-.description ul>li {
+.description ul li {
     margin: 0.8em 2em;
     font-size: 1.3em;
 }
@@ -568,329 +330,106 @@ section img {
     margin: 2em;
 }
 
-/* * * Parallax-homepage * * */
-
-
-.parallax {
-    height: 60vh;
-    background: url('../images/shutterstock_1373773163darker.jpg') center no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.parallax .heading {
-    width: 450px;
-    height: 90%;
-    flex-direction: column;
-    background: rgba(255, 255, 255, 0.938);
-}
-
-
-.parallax .heading h1 {
-    line-height: .5;
-}
-
-.parallax .heading p {
-    color: #000;
-    font-size: 1.7em;
-    font-weight: 900;
-}
-
-.parallax .heading a {
-    margin-top: 2em;
-    background: #d6b88a;
-    border-radius: 0.8em;
-    padding: 0.5em 1em;
-    color: #fff;
-    font-size: 1.2em;
-    font-style: italic;
-    cursor: pointer;
-}
-
-.parallax .heading a:hover {
-    background: rgba(211, 140, 34, 0.494);
-}
-
 /* ------------------------------------------------------------
-* * * * * * * * * CONTACT-PAGE STYLINGS * * * * * * * * * * * * 
+* * * * * * PAGES BASE STYLINGS STYLINGS * * * * * * * * * * * *
 ---------------------------------------------------------------*/
 
-/* - * - * - * HEADER-contactpage * - * - * - */
-.nav-contact {
-    position: relative;
-    background: url(../images/footer.jpg) center no-repeat;
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 5em;
-}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Navigation Menu Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-/* - * - * - * Section contact-form contactpage * - * - * - */
-.contact-form {
+header nav {
+    position: absolute;
+    top: 0;
     width: 100%;
-    justify-content: center;
-}
-
-h2 {
-    align-self: flex-start;
-    font-weight: 400;
-}
-
-.contact-form>.description {
-    margin: 2em;
-}
-
-.contact-form form {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    margin: 2em;
-
-}
-
-input {
-    margin-top: 0.9em;
-}
-
-input,
-textarea {
-    font-family: Arial, sans-serif;
-    font-size: 0.8em;
-
-}
-
-input[type=text],
-input[type=email] {
-    height: 40px;
-    padding: 0.5em;
-    background-color: #fafafa;
-    border: 0;
+    height: 100px;
+    padding: 0 3em;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    transition: .3s box-shadow;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
-input[type=text]:hover,
-input[type=email]:hover,
-textarea:hover,
-input[type=submit]:hover {
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+.homepage {
+    box-shadow: none;
 }
 
-input[type=submit] {
-    height: 40px;
-    padding: 5px 15px;
-    background: rgb(0, 0, 0);
-    border: 0 none;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font-size: 1em;
-    color: #fff;
+nav>a img {
+    width: 170px;
 }
 
-textarea {
-    margin-top: 0.9em;
-    padding: 0.5em;
-    border: 0;
-    background-color: #fafafa;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
-    transition: .3s box-shadow;
-    resize: none;
-}
-
-input:focus,
-textarea:focus {
-    outline: 0;
-}
-
-iframe {
-    width: 100%;
-    height: 500px;
-}
-
-
-/* ------------------------------------------------------------
-* * * * * * * * * ABOUT-PAGE STYLINGS * * * * * * * * * * * * 
----------------------------------------------------------------*/
-
-.parallax-fermer {
-    height: 60vh;
-    background: url('../images/aboutparallax.jpg') center no-repeat;
-    background-attachment: fixed;
-    background-position: bottom left;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.parallax-shop {
-    height: 60vh;
-    background: url('../images/shutterstock_772785955.jpg') center no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ------------------------------------------------------------
-* * * * * * * * * RECIPES-PAGE STYLINGS * * * * * * * * * * * * 
----------------------------------------------------------------*/
-
-.recipe {
-    display: grid;
-    grid-template-columns: repeat(7, 160px);
-    grid-template-rows: 80px 380px min-content;
-    margin-top: 1.5em;
-    padding-bottom: 3em;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.562);
-    border-radius: 5px;
-}
-
-.recipe h2 {
-    grid-column: 2 / 6;
-    grid-row: 1 / 2;
-    align-self: end;
-}
-
-.recipe ul:first-of-type {
-    grid-column: 2 / 4;
-    grid-row: 2 / 3;
-    align-self: center;
-}
-
-.recipe ul:first-of-type li span {
-    font-weight: 600;
-    display: inline-block;
-    width: 60px;
-}
-
-.recipe ul:first-of-type li p {
-    display: inline-block;
-}
-
-.recipe ul:first-of-type li {
-    margin-top: 0.4em;
-}
-
-.recipe ul:first-of-type li:nth-child(1) span,
-.recipe div>span {
-    font-weight: 600;
-    background: black;
-    color: white;
-    padding: 0.5em;
-    width: 100px;
-}
-
-
-.recipe ul:first-of-type>li:nth-child(1) {
-    margin-bottom: 1em;
-}
-
-.recipe img {
-    width: 300px;
-    height: 300px;
-    grid-column: 4 / 7;
-    grid-row: 2 / 4;
-    align-self: center;
-    justify-self: center;
-}
-
-.recipe ul {
-    grid-column: 4 / 7;
-    grid-row: 4 / 5;
-    align-self: center;
-}
-
-.recipe div {
-    grid-column: 2 / 7;
-    grid-row: 6 / 7;
-}
-
-.recipe div p:first-of-type {
-    margin-top: 1em;
-}
-
-.recipe div p+p {
-    margin-top: 0.5em;
-}
-
-
-.subscribe {
-    flex-direction: column;
-}
-
-.subscribe>h2 {
-    text-align: center;
-    font-weight: 600;
-    font-size: 3em;
-    width: 100%;
-}
-
-.subscribe h2+p {
-    width: 80%;
-    font-size: 1.2em;
-    text-align: center;
-}
-
-.subscribe form {
-    width: 70%;
-}
-
-.subscribe form>p {
-    font-size: 1.3em;
-    text-align: center;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-
-}
-
-.subscribe div:nth-of-type(1) input {
-    margin: 0;
-    margin-left: 1.3em;
-}
-
-.subscribe div:nth-of-type(1) label {
-    margin-left: 0.2em;
-}
-
-.subscribe form div:nth-of-type(2) button {
-    background-color: #000;
-    border: none;
-    height: 50px;
-    width: 30%;
-    color: #fff;
-    font-size: 1.1em;
-    letter-spacing: 1px;
-}
-
-.subscribe form>div:nth-of-type(2) {
-    width: 100%;
-    margin-top: 2em;
+header nav.flex {
     justify-content: space-between;
 }
 
-.subscribe form div:nth-of-type(2)>input {
-    width: 70%;
-    height: 50px;
-    margin: 0;
-    padding: 1em;
+header nav ul {
+    display: flex;
 }
 
-/* FOOTER */
+header nav ul li a {
+    color: var(--light-base-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Poppins', 'Source Sans Pro', Tahoma, Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    padding: 0.5em 1em;
+    margin-left: 1.5em;
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+    cursor: pointer;
+}
+
+header nav ul li a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 0;
+    background-color: var(--light-base-color);
+    transition: width 0.5s ease;
+}
+
+header nav ul li a:hover:after {
+    width: 80%;
+}
+
+header nav ul li .current:after {
+    width: 80%;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Main Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+main {
+    position: relative;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+* * * - - - -  Footer Base Styling - - - -  * * * * * *
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 footer {
+    position: relative;
     margin-top: 150px;
+    padding-top: 1em;
+    min-height: 220px;
+    background: url(../images/footer.jpg) center no-repeat;
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    color: var(--light-base-color);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    box-shadow: 0 2px 4px hsl(0, 0%, 0%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .working-information {
@@ -900,7 +439,7 @@ footer {
     transform: translateX(-50%);
     width: 700px;
     height: 180px;
-    background-color: #caa875;
+    background-color: var(--gold-base-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -911,10 +450,9 @@ footer {
 .address,
 .contact,
 .working {
-    color: #333230;
+    color: var(--dark-base-color);
     height: 110px;
     width: 200px;
-    /* background-color: green; */
 }
 
 .address h3,
@@ -931,24 +469,22 @@ footer {
 }
 
 
-.address p>span {
+.address p span {
     display: block;
     margin-left: 2em;
 }
 
-.contact>p,
-.working>p {
+.contact p,
+.working p {
     margin-left: 2em;
 }
 
-.contact p>a {
-    color: #333230;
-}
-
-.working>p {
+.working p {
     text-align: center;
 }
 
+
+/* Gold contact information => Lines between */
 .contact {
     position: relative;
 }
@@ -959,7 +495,7 @@ footer {
     position: absolute;
     width: 2px;
     height: 110px;
-    background-color: #333230be;
+    background-color: var(--dark-base-color);
 }
 
 .contact:before {
@@ -972,6 +508,7 @@ footer {
     top: 0;
 }
 
+/* Footer Navigation */
 footer>nav {
     width: 250px;
     height: 50px;
@@ -990,44 +527,464 @@ footer>nav ul li a {
     color: #fff;
 }
 
-
+/* Social Media Links in the Footer */
 .social-media {
     display: flex;
     justify-content: space-between;
     margin: 0.1em 0.5em;
-    width: 130px;
-    height: 50px;
-
+    width: 200px;
+    height: 60px;
 }
 
 .social-media a {
-    font-size: 1.6em;
-    color: #fff;
+    font-size: 2em;
+    color: var(--light-base-color);
+    transition: transform 0.5s ease;
 }
 
+.social-media a:hover {
+    transform: scale(1.2);
+    color: var(--gold-base-color);
+
+}
+
+/* Green badge on the right in the Footer */
 .badge {
     position: absolute;
-    right: 20px;
-    bottom: 20px;
-    width: 150px;
-    height: 150px;
-    transform: rotate(20deg);
+    right: 40px;
+    bottom: 40px;
+    width: 130px;
 }
 
-.badge img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
+/* Logo on the left in the footer */
 .logo-footer {
     position: absolute;
     left: 30px;
-    bottom: 40px;
+    bottom: 70px;
+    width: 180px;
 }
 
+/* Copy Right text in the Footer */
 .copy-right {
     position: absolute;
     left: 30px;
-    bottom: 10px;
+    bottom: 20px;
+}
+
+
+/* ------------------------------------------------------------
+* * * * * * * * * HOMEPAGE STYLINGS * * * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+
+/* - * - * - * HEADER-homepage * - * - * - */
+
+.header-homepage {
+    position: relative;
+    height: 100vh;
+    background: url('../images/shutterstock_1155170620mirror.jpg') center no-repeat;
+    flex-direction: column;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+/* * * Social Media - Homepage-header * * */
+.social-media-homepage,
+.contact-info-homepage {
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    height: 50%;
+    width: 100px;
+}
+
+.social-media-homepage {
+    left: 0;
+}
+
+.contact-info-homepage {
+    right: 0;
+}
+
+.social-media-homepage ul,
+.contact-info-homepage ul {
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+}
+
+.social-media-homepage ul li a i,
+.contact-info-homepage ul li a i {
+    font-size: 1.7em;
+    color: var(--light-base-color);
+    transition: transform 0.3s ease;
+}
+
+.social-media-homepage ul li a i:hover,
+.contact-info-homepage ul li a i:hover {
+    transform: scale(1.2);
+}
+
+/* * * Parallax-homepage * * */
+.parallax {
+    height: 60vh;
+    background: url('../images/shutterstock_1373773163darker.jpg') center no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parallax .heading {
+    width: 450px;
+    height: 90%;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.938);
+}
+
+.parallax .heading h1 {
+    line-height: .5;
+}
+
+.parallax .heading p {
+    font-size: 1.7em;
+    font-weight: 900;
+}
+
+.parallax .heading a {
+    margin-top: 2em;
+    background-color: var(--gold-base-color);
+    border-radius: 0.8em;
+    padding: 0.5em 1em;
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--light-base-color);
+    cursor: pointer;
+}
+
+.parallax .heading a:hover {
+    background-color: var(--dark-base-color);
+}
+
+/* ------------------------------------------------------------
+* * * * * * * * * CONTACT-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+/* - * - * - * HEADER-contactpage * - * - * - */
+.nav-contact {
+    position: relative;
+    background: url(../images/footer.jpg) no-repeat center center;
+    background-size: cover;
+    margin-bottom: 5em;
+}
+
+.map>h2 {
+    margin: 1em;
+    font-size: 2.5em;
+}
+
+/* - * - * - * Section contact-form contactpage * - * - * - */
+.contact-form {
+    width: 100%;
+    justify-content: center;
+}
+
+h2 {
+    align-self: flex-start;
+    font-weight: 400;
+}
+
+.contact-form .description {
+    margin: 2em;
+}
+
+.contact-form form {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: inherit;
+    font-size: 0.9em;
+    margin-top: 0.9em;
+    padding: 0.9em;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+.contact-form input[type=text],
+.contact-form input[type=email] {
+    height: 40px;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form input[type=submit] {
+    height: 40px;
+    padding: 5px 15px;
+    background-color: var(--dark-base-color);
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    color: var(--light-base-color);
+    cursor: pointer;
+}
+
+.contact-form input[type=text]:hover,
+.contact-form input[type=email]:hover,
+.contact-form textarea:hover,
+.contact-form input[type=submit]:hover {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.623);
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+}
+
+
+/* ------------------------------------------------------------
+* * * * * * * * * ABOUT-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+.parallax-fermer {
+    height: 60vh;
+    background: url('../images/aboutparallax.jpg') no-repeat bottom left;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.parallax-shop {
+    height: 60vh;
+    background: url('../images/shutterstock_772785955.jpg') no-repeat center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* ------------------------------------------------------------
+* * * * * * * * * RECIPES-PAGE STYLINGS * * * * * * * * * * * * 
+---------------------------------------------------------------*/
+
+/* Heading and provided small information after h1 heading */
+main>h1+p,
+main>h1+p+p,
+main>h1+p+p+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+h1+p+p>a,
+h1+p+p+p>a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.recipe {
+    display: grid;
+    grid-template-columns: repeat(7, 160px);
+    grid-template-rows: 80px 380px min-content;
+    margin-top: 1.5em;
+    padding-bottom: 3em;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.562);
+    border-radius: 5px;
+}
+
+
+.recipe h2 {
+    grid-column: 2 / 7;
+    grid-row: 1 / 2;
+    align-self: end;
+    font-weight: 600;
+}
+
+.recipe ul:first-of-type {
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    align-self: center;
+}
+
+.recipe ul:first-of-type li span {
+    display: inline-block;
+    font-weight: 600;
+    width: 60px;
+}
+
+.recipe ul:first-of-type li p {
+    display: inline-block;
+}
+
+.recipe ul:first-of-type li {
+    margin-top: 0.4em;
+}
+
+.recipe ul:first-of-type li:nth-child(1) {
+    margin-top: 0.4em;
+    color: rgb(6, 136, 6);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.recipe ul:first-of-type li:nth-child(1) span,
+.recipe div>h3>span {
+    width: 100px;
+    padding: 0.5em;
+    background-color: var(--dark-base-color);
+    font-weight: 600;
+    color: var(--light-base-color);
+    cursor: auto;
+}
+
+.recipe ul:first-of-type>li:nth-child(1) {
+    margin-bottom: 1em;
+}
+
+.recipe img {
+    width: 300px;
+    height: 300px;
+    grid-column: 4 / 7;
+    grid-row: 2 / 4;
+    align-self: center;
+    justify-self: center;
+    cursor: url(../images/cursor.png), auto;
+}
+
+.recipe ul {
+    grid-column: 4 / 7;
+    grid-row: 4 / 5;
+    align-self: center;
+}
+
+.recipe div {
+    grid-column: 2 / 7;
+    grid-row: 6 / 7;
+}
+
+.recipe div ol {
+    margin-top: 1em;
+}
+
+.recipe div ol li {
+    margin-top: 0.5em;
+}
+
+
+.subscribe.flex {
+    flex-direction: column;
+}
+
+.subscribe {
+    background-color: var(--dark-base-color);
+    height: 600px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.801)
+}
+
+.subscribe h1 {
+    font-size: 5em;
+    line-height: 1;
+}
+
+.subscribe h1+p {
+    width: 50%;
+    font-size: 1.2em;
+    color: var(--light-base-color);
+}
+
+.subscribe form {
+    margin-top: 3em;
+    width: 90%;
+    color: var(--light-base-color);
+}
+
+.subscribe form>p {
+    font-size: 1.3em;
+    text-align: center;
+    color: var(--gold-base-colors);
+}
+
+.subscribe div:nth-of-type(1) {
+    margin-top: 1em;
+}
+
+.checkbox {
+    display: inline-flex;
+    position: relative;
+    margin-left: 1em;
+    cursor: pointer;
+}
+
+.checkbox>span {
+    color: var(--light-base-color);
+    font-size: 1.1em;
+    padding: 0.2em 0.5em;
+}
+
+.checkbox>input {
+    height: 30px;
+    width: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    transition-duration: 0.3s;
+    background-color: var(--gold-base-color);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.checkbox>input:checked {
+    background-color: #d6b37f;
+}
+
+.checkbox>input:checked+span::before {
+    content: '\2713';
+    display: block;
+    text-align: center;
+    color: var(--dark-base-color);
+    font-size: 1.5em;
+    position: absolute;
+    left: 10px;
+    top: -1px;
+}
+
+.subscribe form>div:nth-of-type(2) {
+    width: 100%;
+    margin-top: 2em;
+    justify-content: center;
+}
+
+.subscribe form div:nth-of-type(2)>input {
+    font-family: inherit;
+    font-size: 1.1em;
+    width: 400px;
+    height: 50px;
+    margin: 0;
+    padding: 1em;
+}
+
+.subscribe form div:nth-of-type(2) button {
+    background-color: var(--gold-base-color);
+    border: none;
+    height: 50px;
+    width: 200px;
+    color: var(--dark-base-color);
+    font-family: inherit;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    transition: 0.5s;
+}
+
+.subscribe form div:nth-of-type(2) button:hover {
+    letter-spacing: 3px;
+    background-color: #d4b27e;
 }
