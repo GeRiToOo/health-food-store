@@ -165,7 +165,7 @@ body {
 header,
 main,
 footer {
-    max-width: 1200px;
+    max-width: 1100px;
     min-width: 320px;
     margin: 0 auto;
 }
@@ -193,8 +193,8 @@ h2 {
     font-weight: 100;
     line-height: .2;
     text-align: center;
-    text-shadow: 0px 0px 1px rgb(0, 0, 0);
     width: 100%;
+    text-shadow: 0px 0px 1px rgb(0, 0, 0);
     color: var(--gold-base-color);
 }
 
@@ -248,7 +248,7 @@ button:focus {
     width: 100%;
     height: 50%;
     position: relative;
-    background-color: rgba(66, 63, 63, 0.349);
+    background: rgba(66, 63, 63, 0.349);
 }
 
 .headline.flex {
@@ -258,7 +258,6 @@ button:focus {
 .headline p:first-of-type {
     font-size: 4em;
     letter-spacing: 13px;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
     color: var(--gold-base-color);
 }
 
@@ -266,7 +265,6 @@ button:focus {
     font-size: 6em;
     font-weight: 900;
     line-height: 0.9;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
     color: var(--light-base-color);
 }
 
@@ -277,14 +275,14 @@ button:focus {
     line-height: .2;
     letter-spacing: 2px;
     font-style: italic;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
     color: var(--light-base-color);
+
 }
 
-/* * * Section and Description Styling * * */
+/* * * Section and Description * * */
 section {
     margin: 3em 0;
-    min-height: 90vh;
+    min-height: 60vh;
 }
 
 section.flex {
@@ -300,7 +298,6 @@ section.flex {
 .description>h2 {
     line-height: .6;
     text-align: center;
-
 }
 
 .description p {
@@ -359,9 +356,6 @@ header nav {
 
 nav>a img {
     width: 170px;
-    -webkit-filter: drop-shadow(5px 5px 5px rgb(0, 0, 0));
-    filter: drop-shadow(5px 5px 5px rgb(0, 0, 0));
-
 }
 
 header nav.flex {
@@ -385,7 +379,6 @@ header nav ul li a {
     position: relative;
     border-radius: 10px;
     transition: all 0.6s ease;
-    text-shadow: 0px 0px 10px rgb(0, 0, 0);
     cursor: pointer;
 }
 
@@ -409,24 +402,12 @@ header nav ul li .current:after {
     width: 80%;
 }
 
-.nav {
-    position: relative;
-    background: url(../images/footer.jpg) no-repeat center center;
-    background-size: cover;
-    /* margin-bottom: 5em; */
-}
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 * * * - - - -  Main Base Styling - - - -  * * * * * *
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 main {
     position: relative;
-}
-
-main>h1 {
-    margin-top: 1.5em;
-    margin-bottom: 0.3em;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -638,12 +619,7 @@ footer>nav ul li a {
 .contact-info-homepage ul li a i {
     font-size: 1.7em;
     color: var(--light-base-color);
-    text-shadow: 5px 10px 10px rgb(0, 0, 0);
     transition: transform 0.3s ease;
-}
-
-.social-media-homepage ul li a i {
-    font-size: 1.9em;
 }
 
 .social-media-homepage ul li a i:hover,
@@ -687,7 +663,6 @@ footer>nav ul li a {
     font-size: 1.2em;
     font-style: italic;
     color: var(--light-base-color);
-    transition: all 0.5s ease;
     cursor: pointer;
 }
 
@@ -695,9 +670,11 @@ footer>nav ul li a {
     background-color: var(--dark-base-color);
 }
 
-.parallax .heading a:active {
-    transform: scale(0.9);
+.subscribe p:nth-of-type(1)>a {
+    color: var(--gold-base-color);
+    text-decoration: underline;
 }
+
 
 
 /* ------------------------------------------------------------
@@ -705,18 +682,17 @@ footer>nav ul li a {
 ---------------------------------------------------------------*/
 
 /* - * - * - * HEADER-contactpage * - * - * - */
-
+.nav-contact {
+    position: relative;
+    background: url(../images/footer.jpg) no-repeat center center;
+    background-size: cover;
+    margin-bottom: 5em;
+}
 
 .map>h2 {
     margin: 1em;
     font-size: 2.5em;
 }
-
-iframe {
-    width: 100%;
-    height: 700px;
-}
-
 
 /* - * - * - * Section contact-form contactpage * - * - * - */
 .contact-form {
@@ -725,8 +701,8 @@ iframe {
 }
 
 h2 {
-    align-self: center;
-    font-weight: 600;
+    align-self: flex-start;
+    font-weight: 400;
 }
 
 .contact-form .description {
@@ -762,7 +738,7 @@ h2 {
 }
 
 .contact-form input[type=submit] {
-    height: 50px;
+    height: 40px;
     padding: 5px 15px;
     background-color: var(--dark-base-color);
     font-size: 1.3em;
@@ -776,6 +752,11 @@ h2 {
 .contact-form textarea:hover,
 .contact-form input[type=submit]:hover {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.623);
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
 }
 
 
@@ -926,12 +907,6 @@ h1+p+p+p>a {
     color: var(--light-base-color);
 }
 
-.subscribe p:nth-of-type(1)>a {
-    color: var(--gold-base-color);
-    text-decoration: underline;
-}
-
-
 .subscribe>a {
     color: var(--light-base-color);
     background-color: var(--gold-base-color);
@@ -951,7 +926,7 @@ h1+p+p+p>a {
 }
 
 .subscribe form {
-    margin-top: 3em;
+    margin-top: 1.5em;
     width: 90%;
     color: var(--light-base-color);
 }
