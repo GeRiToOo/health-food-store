@@ -353,6 +353,12 @@ section img {
     margin: 2em;
 }
 
+@media (max-width:680px) {
+    section img {
+        width: 100%;
+    }
+}
+
 /* ------------------------------------------------------------
 * * * * * * PAGES BASE STYLINGS STYLINGS * * * * * * * * * * * *
 ---------------------------------------------------------------*/
@@ -633,6 +639,38 @@ footer>nav ul li a {
     bottom: 20px;
 }
 
+
+@media (max-width: 680px) {
+
+    footer {
+        min-height: 160px;
+        margin-top: 0.6em;
+        justify-content: space-between;
+        padding-top: 1em;
+    }
+
+    .social-media {
+        height: 80px;
+    }
+
+    .working-information {
+        display: none;
+    }
+
+    .logo-footer {
+        display: none;
+    }
+
+    .badge {
+        display: none;
+    }
+
+    .copy-right {
+        left: 50%;
+        transform: translate(-50%, 0%);
+        bottom: 10px;
+    }
+}
 
 /* ------------------------------------------------------------
 * * * * * * * * * HOMEPAGE STYLINGS * * * * * * * * * * * * * * 
@@ -1062,9 +1100,10 @@ h1+p+p+p>a {
 
 .subscribe {
     background-color: var(--dark-base-color);
-    height: 600px;
+    min-height: 600px;
     border-radius: 5px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.801)
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.801);
+    padding: 1em 0;
 }
 
 .subscribe h2 {
@@ -1188,4 +1227,13 @@ h1+p+p+p>a {
 .subscribe form div:nth-of-type(2) button:hover {
     letter-spacing: 3px;
     background-color: #d4b27e;
+}
+
+
+@media (max-width:680px) {
+    .subscribe h2+p {
+        width: 80%;
+        font-size: 1.2em;
+        color: var(--light-base-color);
+    }
 }
